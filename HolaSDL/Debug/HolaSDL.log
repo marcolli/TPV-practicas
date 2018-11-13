@@ -1,0 +1,10 @@
+﻿  BlocksMap.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+c:\users\marcos\desktop\tpv\proyectossdl\holasdl\game.h(49): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
+  c:\users\marcos\desktop\tpv\proyectossdl\holasdl\game.h(49): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
+c:\users\marcos\desktop\tpv\proyectossdl\holasdl\blocksmap.cpp(30): error C2143: error de sintaxis: falta ';' delante de 'throw'
+c:\users\marcos\desktop\tpv\proyectossdl\holasdl\blocksmap.cpp(132): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\marcos\desktop\tpv\proyectossdl\holasdl\blocksmap.cpp(133): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\marcos\desktop\tpv\proyectossdl\holasdl\blocksmap.cpp(137): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\marcos\desktop\tpv\proyectossdl\holasdl\blocksmap.cpp(138): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
