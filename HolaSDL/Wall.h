@@ -1,26 +1,14 @@
 #pragma once
-
-#include"Vector2D.h"
-#include"Texture.h"
+#include"ArkanoidObject.h"
 #include "checkML.h"
 
 using namespace std;
 
-class Wall {
-
-private:
-
-	Vector2D pos;
-	int ancho;
-	int alto;
-	Texture* texture;
-
+class Wall : public ArkanoidObject {
 public:
 
 	Wall() {}
-	Wall(int posx, int posy, int w, int h, Texture* textura) :
-		pos(posx, posy),
-		ancho(w), alto(h), texture(textura) {}
+	Wall(int posx, int posy, int w, int h, Texture* textura);
 
 	void render() const;
 

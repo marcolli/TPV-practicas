@@ -7,7 +7,7 @@ class Game;
 
 using namespace std;
 
-class Ball {
+class Ball{
 
 private:
 

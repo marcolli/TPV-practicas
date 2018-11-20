@@ -3,6 +3,11 @@
 
 using namespace std;
 
+Wall::Wall(int posx, int posy, int w, int h, Texture* textura) : ArkanoidObject(textura) {
+	pos = Vector2D(posx, posy);
+
+}
+
 void Wall::render() const {
 	SDL_Rect rect;
 
