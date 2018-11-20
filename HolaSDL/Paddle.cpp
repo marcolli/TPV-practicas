@@ -5,13 +5,15 @@ using namespace std;
 
 SDL_Event event;
 
-void Paddle::render() const {
-	SDL_Rect rect;
+Paddle::Paddle(double posx, double posy, double width, double height, Texture* textura) : MovingObject(textura, getRect()) {
+	pos = Vector2D(posx,posy);
+	w = width;
+	h = height;
+	velocidad = Vector2D(0,0);
+}
 
-	rect.x = pos.getX();
-	rect.y = pos.getY();
-	rect.w = ancho;
-	rect.h = alto;
+void Paddle::render() {
+	SDL_Rect rect = getRect();
 
 	texture->render(rect);
 }
@@ -49,5 +51,4 @@ void Paddle::handleEvents(SDL_Event event) {
 			break;
 		break;
 	}
-
 }

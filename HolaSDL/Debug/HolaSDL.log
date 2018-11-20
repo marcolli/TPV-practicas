@@ -1,8 +1,142 @@
-﻿Compilación iniciada a las 20/11/2018 13:29:03.
-     1>Proyecto "C:\hlocal\tpv\TPV-practicas\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v141 (Platform Toolset = 'v141') cannot be found. To build using the v141 build tools, please install v141 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
-     1>Compilación del proyecto terminada "C:\hlocal\tpv\TPV-practicas\HolaSDL\HolaSDL.vcxproj" (Build destinos) -- ERROR.
-
-ERROR al compilar.
-
-Tiempo transcurrido 00:00:00
+﻿  ArkanoidObject.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.cpp(14): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.cpp(15): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.cpp(16): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.cpp(17): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Ball.cpp
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): error C2011: 'ArkanoidObject': nueva definición del tipo 'class'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): note: vea la declaración de 'ArkanoidObject'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.h(9): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.cpp(6): error C3861: 'getRect': no se encontró el identificador
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.cpp(18): error C3861: 'getRect': no se encontró el identificador
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.cpp(20): error C2065: 'texture': identificador no declarado
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.cpp(20): error C2227: el operando izquierdo de '->render' debe señalar al tipo class/struct/union/generic
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.cpp(20): note: el tipo es 'unknown-type'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.cpp(31): error C3861: 'getRect': no se encontró el identificador
+  Block.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+  BlocksMap.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): error C2011: 'ArkanoidObject': nueva definición del tipo 'class'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): note: vea la declaración de 'ArkanoidObject'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.h(9): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\movingobject.h(4): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(10): error C3861: 'getRect': no se encontró el identificador
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(10): error C2614: 'BlocksMap': inicialización de miembro no válida: 'ArkanoidObject' no es una base o miembro
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(16): error C2065: 'texture': identificador no declarado
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(52): error C2259: 'Block': no se puede crear una instancia de una clase abstract
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(52): note: debido a los siguientes miembros:
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(52): note: 'void GameObject::update(void)': es abstracto
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\gameobject.h(11): note: vea la declaración de 'GameObject::update'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(52): note: 'void GameObject::handlleEvents(void)': es abstracto
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\gameobject.h(12): note: vea la declaración de 'GameObject::handlleEvents'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(52): error C2065: 'texture': identificador no declarado
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(85): error C2039: 'getY': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(85): error C2039: 'getH': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(85): error C2039: 'getX': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(85): error C2039: 'getW': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(97): error C2039: 'getY': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(97): error C2039: 'getH': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(97): error C2039: 'getX': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(109): error C2039: 'getY': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(109): error C2039: 'getX': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(121): error C2039: 'getY': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(121): error C2039: 'getX': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(121): error C2039: 'getW': no es un miembro de 'Block'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): note: vea la declaración de 'Block'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(140): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(141): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(145): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.cpp(146): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Game.cpp
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): error C2011: 'ArkanoidObject': nueva definición del tipo 'class'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): note: vea la declaración de 'ArkanoidObject'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.h(9): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(23): error C2259: 'Paddle': no se puede crear una instancia de una clase abstract
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(23): note: debido a los siguientes miembros:
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(23): note: 'void GameObject::handlleEvents(void)': es abstracto
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\gameobject.h(12): note: vea la declaración de 'GameObject::handlleEvents'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(24): error C2259: 'Ball': no se puede crear una instancia de una clase abstract
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(24): note: debido a los siguientes miembros:
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(24): note: 'void GameObject::handlleEvents(void)': es abstracto
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\gameobject.h(12): note: vea la declaración de 'GameObject::handlleEvents'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(88): error C2039: 'getW': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(88): error C2039: 'getH': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(91): error C2039: 'getRect': no es un miembro de 'Ball'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\ball.h(9): note: vea la declaración de 'Ball'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(102): error C2039: 'getX': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(107): error C2039: 'getX': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(107): error C2039: 'getW': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(112): error C2039: 'getY': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(112): error C2039: 'getH': no es un miembro de 'Wall'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): note: vea la declaración de 'Wall'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(119): error C2039: 'getX': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(119): error C2039: 'getW': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(119): error C2039: 'getY': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(119): error C2039: 'getH': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(121): error C2039: 'getX': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(121): error C2039: 'getW': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(122): error C2039: 'getX': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(122): error C2039: 'getW': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(123): error C2039: 'getX': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.cpp(123): error C2039: 'getW': no es un miembro de 'Paddle'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\paddle.h(8): note: vea la declaración de 'Paddle'
+  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): error C2011: 'ArkanoidObject': nueva definición del tipo 'class'
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\arkanoidobject.h(4): note: vea la declaración de 'ArkanoidObject'
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\block.h(8): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\blocksmap.h(9): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\wall.h(7): error C2504: 'ArkanoidObject': clase base sin definir
+c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
+  c:\users\erica\desktop\tpv\pract2\tpv-practicas\holasdl\game.h(49): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
+  MovingObject.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+  Paddle.cpp
+  Wall.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\malloc.h(121): note: vea la definición anterior de '_malloca'
+  Generando código...

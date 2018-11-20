@@ -1,4 +1,3 @@
-#include "Texture.h"
 #include "Block.h"
 #include "BlocksMap.h"
 #include "Game.h"
@@ -8,14 +7,23 @@
 
 using namespace std;
 
-void BlocksMap::render() const {
+BlocksMap::BlocksMap(int widthmap, int heightmap, int widthcell, int heightcell, Texture* textura) : ArkanoidObject(textura, getRect()) {
+
+	wmapa = widthmap;
+	hmapa = heightmap;
+	wcelda = widthcell;
+	hcelda = heightcell;
+	texture = textura;
+	numBloques = 0;
+}
+
+void BlocksMap::render() {
 	for (int i = 0; i < fils; i++) {
 		for (int j = 0; j < cols; j++) {
 			if (mapa[i][j] != nullptr)
 				mapa[i][j]->render();
 		}
 	}
-
 }
 
 /*	Carga el mapa de bloques apartir de un filename(string)
@@ -149,4 +157,14 @@ Block* BlocksMap::blockAt(const Vector2D& coll) {
 void BlocksMap::destruyeBloque(Block* bloque) {
 	mapa[bloque->getFila()][bloque->getCol()] = nullptr;
 	numBloques--;
+}
+
+BlocksMap::~BlocksMap() {
+	for (int i = 0; i < fils; i++) {
+		for (int j = 0; j < cols; j++)
+			delete mapa[i][j];
+		delete[]mapa[i];
+	}
+	delete mapa;
+	mapa = nullptr;
 }

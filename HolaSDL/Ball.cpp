@@ -3,14 +3,19 @@
 
 using namespace std;
 
-void Ball::render() const {
+Ball::Ball(double posx, double posy, double width, double height, Texture* textura, Game* juego) : MovingObject(textura, getRect()) {
 
-	SDL_Rect rect;
+	pos = Vector2D(posx, posy);
+	w = width;
+	h = height;
+	velocidad = Vector2D(1,-1);
+	game = juego;
+}
 
-	rect.x = pos.getX();
-	rect.y = pos.getY();
-	rect.w = ancho;
-	rect.h = alto;
+
+void Ball::render() {
+
+	SDL_Rect rect = getRect();
 
 	texture->render(rect);
 }
@@ -31,18 +36,9 @@ void Ball::update() {
 	}
 }
 
-/*	Devuelve el rectangulo de la ball
+/*	Devuelve el Velocidad de la ball
 */
 
-SDL_Rect Ball::getRect() {
-
-	SDL_Rect rect;
-	rect.x = pos.getX();
-	rect.y = pos.getY();
-	rect.w = ancho;
-	rect.h = alto;
-	return rect;
-}
 Vector2D Ball::getVel() {
 	return velocidad;
 }

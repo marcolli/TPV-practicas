@@ -3,14 +3,18 @@
 
 using namespace std;
 
-void Block::render() const {
+Block::Block(double posx, double posy, double wi, double he, int fila, int columna, int colour, Texture* textura) : ArkanoidObject(textura, getRect()) {
+	pos = Vector2D(posx, posy);
+	w = wi;
+	h = he;
+	fil = fila;
+	col = columna;
+	color = colour;
+}
 
-	SDL_Rect rect;
+void Block::render() {
 
-	rect.x = pos.getX();
-	rect.y = pos.getY();
-	rect.w = ancho;
-	rect.h = alto;
+	SDL_Rect rect = getRect();
 
 	texture->renderFrame(rect, (color-1)/texture->getNumCols(), (color-1)%texture->getNumCols(), 0);
 }

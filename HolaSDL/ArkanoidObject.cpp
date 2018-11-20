@@ -1,11 +1,11 @@
 #include "ArkanoidObject.h"
 
-ArkanoidObject::ArkanoidObject(Texture* textura, SDL_Rect rect)
+ArkanoidObject::ArkanoidObject(Texture* textura, SDL_Rect rectan)
 {
 	texture = textura;
-	rect = rect;
+	rect = rectan;
 	pos = Vector2D(0,0);
-	ancho = alto = 0;
+	w = h = 0;
 }
 
 SDL_Rect ArkanoidObject::getRect() {
@@ -13,10 +13,16 @@ SDL_Rect ArkanoidObject::getRect() {
 	SDL_Rect rect;
 	rect.x = pos.getX();
 	rect.y = pos.getY();
-	rect.w = ancho;
-	rect.h = alto;
+	rect.w = w;
+	rect.h = h;
 	return rect;
 }
+
+double ArkanoidObject::getX() {	return pos.getX(); }
+double ArkanoidObject::getY() { return pos.getY(); }
+double ArkanoidObject::getW() { return w; }
+double ArkanoidObject::getH() { return h; }
+
 
 ArkanoidObject::~ArkanoidObject()
 {

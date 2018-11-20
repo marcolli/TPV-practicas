@@ -1,8 +1,7 @@
 #pragma once
 #include "ArkanoidObject.h"
 
-class MovingObject : public ArkanoidObject
-{
+class MovingObject : public ArkanoidObject {
 protected:
 	Vector2D velocidad;
 

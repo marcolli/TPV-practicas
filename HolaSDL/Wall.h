@@ -8,13 +8,10 @@ class Wall : public ArkanoidObject {
 public:
 
 	Wall() {}
-	Wall(int posx, int posy, int w, int h, Texture* textura);
+	Wall(double posx, double posy,double wi, double he, Texture* textura);
+	
+	virtual void render();//const??
 
-	void render() const;
-
-	double getX() const { return pos.getX(); };
-	double getY() const { return pos.getY(); };
-	int getW() const { return ancho; };
-	int getH() const { return alto; };
+	~Wall();
 };
 

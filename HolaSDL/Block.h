@@ -1,35 +1,26 @@
 #pragma once
 
-#include"Vector2D.h"
-#include"Texture.h"
+#include"ArkanoidObject.h"
 #include "checkML.h"
 
 using namespace std;
 
-class Block {
+class Block : public ArkanoidObject {
 
 private:
 
-	Vector2D pos;
-	int ancho;
-	int alto;
 	int color;
 	int fil;
 	int col;
-	Texture* texture;
+	//Texture* texture;
 
 public:
 
 	Block() {}
-	Block(int posx, int posy, int w, int h, int fila, int columna, int colour, Texture* textura) :
-		pos(posx, posy), color(colour), fil(fila), col(columna),
-		ancho(w), alto(h), texture(textura) {}
+	Block(double posx, double posy, double wi, double he, int fila, int columna, int colour, Texture* textura);
 
-	double getX() const { return pos.getX(); };
-	double getY() const { return pos.getY(); };
-	int getW() const { return ancho; };
-	int getH() const { return alto; };
-	void render() const;
+	//void render() const;
+	virtual void render();
 
 	int getFila() const { return fil; };
 	int getCol() const { return col; };

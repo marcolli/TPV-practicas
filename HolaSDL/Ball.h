@@ -1,32 +1,24 @@
 #pragma once
 
-#include "Vector2D.h"
-#include "Texture.h"
 #include "checkML.h"
+#include "MovingObject.h"
 class Game;
 
 using namespace std;
 
-class Ball{
+class Ball : public MovingObject {
 
 private:
-
-	Vector2D pos;
-	int ancho;
-	int alto;
-	Vector2D velocidad;
-	Texture* texture;
 	Game* game;
 
 public:
 
-	Ball() {}
-	Ball(int posx, int posy, int width, int height, Texture* textura, Game* juego) :
-		pos(posx, posy), ancho(width), alto(height), texture(textura), velocidad(1, -1), game(juego) {}
+	Ball() {};
+	Ball(double posx, double posy, double width, double height, Texture* textura, Game* juego);
 
-	void render() const;
-	void update();
-	SDL_Rect getRect();
+	virtual void render();
+	virtual void update();
+	
 	Vector2D getVel();
 	void setX(double x) { pos.setX(x); };
 	void setY(double y) { pos.setY(y); };

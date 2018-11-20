@@ -8,8 +8,8 @@ public:
 	GameObject();
 
 	virtual void render() = 0;
-	virtual void update();
-	virtual void handlleEvents();
+	virtual void update() = 0;
+	virtual void handlleEvents() = 0;
 
 	virtual ~GameObject();
 };
