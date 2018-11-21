@@ -9,8 +9,6 @@ public:
 
 	Wall() {}
 	Wall(double posx, double posy,double wi, double he, Texture* textura);
-	
-	virtual void render();//const??
 
 	~Wall();
 };

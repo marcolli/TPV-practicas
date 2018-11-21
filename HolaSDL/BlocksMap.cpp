@@ -7,13 +7,10 @@
 
 using namespace std;
 
-BlocksMap::BlocksMap(int widthmap, int heightmap, int widthcell, int heightcell, Texture* textura) : ArkanoidObject(textura, getRect()) {
-
-	wmapa = widthmap;
-	hmapa = heightmap;
+BlocksMap::BlocksMap(int widthmap, int heightmap, int widthcell, int heightcell, Texture* textura) : 
+	ArkanoidObject(10, 10, widthmap, heightmap, textura) {
 	wcelda = widthcell;
 	hcelda = heightcell;
-	texture = textura;
 	numBloques = 0;
 }
 

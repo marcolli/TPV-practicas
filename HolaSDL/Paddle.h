@@ -12,7 +12,6 @@ public:
 	Paddle() {}
 	Paddle(double posx, double posy, double width, double height, Texture* textura);
 
-	virtual void render();
 	virtual void update();
 	virtual void handleEvents(SDL_Event event);
 

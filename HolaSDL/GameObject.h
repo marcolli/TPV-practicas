@@ -2,12 +2,11 @@
 #include "Texture.h"
 #include "Vector2D.h"
 
-class GameObject
-{
+class GameObject {
 public:
-	GameObject();
+	GameObject() {};
 
-	virtual void render() = 0;
+	virtual void render() const = 0;
 	virtual void update() = 0;
 	virtual void handlleEvents() = 0;
 

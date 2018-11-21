@@ -3,21 +3,14 @@
 
 using namespace std;
 
-Ball::Ball(double posx, double posy, double width, double height, Texture* textura, Game* juego) : MovingObject(textura, getRect()) {
-
-	pos = Vector2D(posx, posy);
-	w = width;
-	h = height;
+Ball::Ball(double posx, double posy, double w, double h, Texture* textura, Game* juego) : 
+	MovingObject(posx, posy, w, h, textura) {
 	velocidad = Vector2D(1,-1);
 	game = juego;
 }
 
-
 void Ball::render() {
-
-	SDL_Rect rect = getRect();
-
-	texture->render(rect);
+	MovingObject::render();
 }
 
 void Ball::update() {

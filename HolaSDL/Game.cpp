@@ -22,9 +22,9 @@ Game::Game() {
 
 	paddle		= new Paddle((WIN_WIDTH/2) - (PADDLE_WIDTH / 2), ((WIN_HEIGHT*3)/4), PADDLE_WIDTH, 24, textures[PaddleText]);
 	ball		= new Ball((WIN_WIDTH / 2) - (BALL_WIDTH/2), ((WIN_HEIGHT * 3) / 4) -10, BALL_WIDTH, 25, textures[BallText], this);
-	/*topwall		= new Wall(0, 0, WIN_WIDTH, 10, textures[TopText]);
+	topwall		= new Wall(0, 0, WIN_WIDTH, 10, textures[TopText]);
 	rightwall	= new Wall(WIN_WIDTH - 10, 0, 10, 800, textures[SideText]);
-	leftwall	= new Wall(0, 0, 10, 800, textures[SideText]);*/
+	leftwall	= new Wall(0, 0, 10, 800, textures[SideText]);
 	map			= new BlocksMap(MAP_WIDTH, MAP_HEIGHT, 0, 0, textures[BlocksText]);
 
 	map->load("../mapas/level01.ark");

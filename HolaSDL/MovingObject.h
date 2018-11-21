@@ -6,9 +6,12 @@ protected:
 	Vector2D velocidad;
 
 public:
-	MovingObject();
-	MovingObject(Texture* textura, SDL_Rect rect);
-	//MovingObject(Texture* textura, SDL_Rect rect) : ArkanoidObject(textura, rect){};
+
+	MovingObject() {}
+	MovingObject(int posx, int posy, double w, double h, Texture* textura);
+	
+	virtual void render() { ArkanoidObject::render(); }
+
 	virtual ~MovingObject();
 };
 

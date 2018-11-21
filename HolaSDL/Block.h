@@ -19,7 +19,6 @@ public:
 	Block() {}
 	Block(double posx, double posy, double wi, double he, int fila, int columna, int colour, Texture* textura);
 
-	//void render() const;
 	virtual void render();
 
 	int getFila() const { return fil; };

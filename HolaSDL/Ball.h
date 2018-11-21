@@ -16,8 +16,8 @@ public:
 	Ball() {};
 	Ball(double posx, double posy, double width, double height, Texture* textura, Game* juego);
 
-	virtual void render();
 	virtual void update();
+	void render();
 	
 	Vector2D getVel();
 	void setX(double x) { pos.setX(x); };
