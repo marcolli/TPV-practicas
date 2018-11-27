@@ -11,12 +11,9 @@ public:
 	ArkanoidObject() {};
 	ArkanoidObject(int posx, int posy, double w, double h, Texture* textura);
 
-	virtual void render() {
-		texture->render(getRect());
-	}
-
-	virtual void update();
-	virtual void handleEvents();
+	virtual void render();
+	virtual void update() {};
+	virtual void handleEvents() {};
 
 	//virtual void loadFromFile();
 	//virtual void saveToFile();
@@ -26,5 +23,7 @@ public:
 	double getY();
 	double getW();
 	double getH();
+
+	virtual  ~ArkanoidObject() {};
 
 };

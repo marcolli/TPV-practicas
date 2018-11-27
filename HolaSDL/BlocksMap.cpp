@@ -58,6 +58,7 @@ void BlocksMap::load(string filename) {
 }
 //Rescala el tamaño de los bloques para ajustarlos al espacio del los muros, dependiedo del nº de filas y cols que tenga el mapa.
 void BlocksMap::reescalado() {
+	wmapa = WIN_WIDTH - 20;
 	hmapa = WIN_HEIGHT - 10 - WIN_HEIGHT / 2;
 	wcelda = (WIN_WIDTH - 20) / cols;
 	hcelda = (WIN_HEIGHT - 10 - WIN_HEIGHT/2) / fils;
@@ -99,7 +100,8 @@ Block* BlocksMap::collides(const SDL_Rect& ballRect, const Vector2D& ballVel, Ve
 		else if ((b = blockAt(p0))) {
 			collVector = { 0,1 };
 		}
-		else if ((b = blockAt(p3))) collVector = { -1,0 };
+		else if ((b = blockAt(p3))) 
+			collVector = { -1,0 };
 	}
 	else if (ballVel.getX() > 0 && ballVel.getY() > 0) {
 		if ((b = blockAt(p3))) {

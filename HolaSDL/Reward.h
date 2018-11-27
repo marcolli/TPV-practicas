@@ -7,8 +7,8 @@ public:
 	Reward();
 	Reward(double posx, double posy, double width, double height, Texture* textura);
 	
-	virtual void render();
-	virtual void update();
+	/*virtual void render();
+	virtual void update();*/
 
 	virtual ~Reward();
 };

@@ -8,10 +8,10 @@ Ball::Ball(double posx, double posy, double w, double h, Texture* textura, Game*
 	velocidad = Vector2D(1,-1);
 	game = juego;
 }
-
-void Ball::render() {
-	MovingObject::render();
-}
+//
+//void Ball::render() {
+//	MovingObject::render();
+//}
 
 void Ball::update() {
 

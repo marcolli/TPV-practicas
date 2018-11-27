@@ -13,6 +13,10 @@ SDL_Rect ArkanoidObject::getRect() {
 	return rect;
 }
 
+void  ArkanoidObject::render() {
+	texture->render(getRect());
+}
+
 double ArkanoidObject::getX() { return pos.getX(); }
 double ArkanoidObject::getY() { return pos.getY(); }
 double ArkanoidObject::getW() { return width; }

@@ -9,6 +9,8 @@
 #include "Vector2D.h"
 #include "checkML.h"
 
+#include <list>
+
 using namespace std;
 
 struct TextureAttributes
@@ -42,6 +44,8 @@ private:
 	Wall* rightwall = nullptr;
 	Wall* leftwall = nullptr;
 	Ball* ball = nullptr;
+
+	list<ArkanoidObject*> objects;
 
 	bool exit, gameOver, win = false;//gameOver-> perder vidas, win-> acabar con todos los bloques, exit-> salir por menu de pausa
 	bool paddleCD = false;

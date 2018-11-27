@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <iostream>
 #include "checkML.h"
+#include <list>
 
 using namespace std;
 
@@ -27,6 +28,13 @@ Game::Game() {
 	leftwall	= new Wall(0, 0, 10, 800, textures[SideText]);
 	map			= new BlocksMap(MAP_WIDTH, MAP_HEIGHT, 0, 0, textures[BlocksText]);
 
+	objects.push_back(map);
+	objects.push_back(paddle);
+	objects.push_back(ball);
+	objects.push_back(topwall);
+	objects.push_back(rightwall);
+	objects.push_back(leftwall);
+	
 	map->load("../mapas/level01.ark");
 }
  
@@ -48,18 +56,16 @@ void Game::run() {
 }
 
 void Game::update() {
-	paddle->update();
-	ball->update();
+	for (ArkanoidObject* o: objects) {
+		o->update();
+	}	
 }
 
 void Game::render() const {
 	SDL_RenderClear(renderer);
-	paddle->render();
-	map->render();
-	topwall->render();
-	rightwall->render();
-	leftwall->render();
-	ball->render();
+	for (ArkanoidObject* o : objects) {
+		o->render();
+	}
 	SDL_RenderPresent(renderer);
 }
 
@@ -84,6 +90,7 @@ void Game::handleEvents() {
 	  Esto pasaba amenudo si golpeabamos la pelota con la pala mientras moviamos la pala
 */
 bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
+
 	//casos blocksMap
 	if (rect.x > leftwall->getW() && rect.x+rect.w < WIN_WIDTH - rightwall->getW() && rect.y > topwall->getH() && rect.y < MAP_HEIGHT + topwall->getH()) {
 		Vector2D collVect;

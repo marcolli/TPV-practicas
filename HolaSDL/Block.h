@@ -12,7 +12,6 @@ private:
 	int color;
 	int fil;
 	int col;
-	//Texture* texture;
 
 public:
 
