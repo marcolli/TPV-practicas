@@ -1,10 +1,9 @@
-﻿  BlocksMap.cpp
-c:\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': macro redefinition
-  c:\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: see previous definition of '_malloca'
-c:\hlocal\tpv-practicas\holasdl\game.h(53): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  c:\hlocal\tpv-practicas\holasdl\game.h(53): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
-c:\hlocal\tpv-practicas\holasdl\blocksmap.cpp(139): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\hlocal\tpv-practicas\holasdl\blocksmap.cpp(140): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\hlocal\tpv-practicas\holasdl\blocksmap.cpp(144): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\hlocal\tpv-practicas\holasdl\blocksmap.cpp(145): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  HolaSDL.vcxproj -> C:\hlocal\TPV-practicas\bin\HolaSDLDebug.exe
+﻿  Ball.cpp
+c:\users\mxddx\desktop\tpv-practicas\holasdl\game.h(54): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
+  c:\users\mxddx\desktop\tpv-practicas\holasdl\game.h(54): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
+c:\users\mxddx\desktop\tpv-practicas\holasdl\ball.cpp(7): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  Vector2D.cpp
+c:\users\mxddx\desktop\tpv-practicas\holasdl\vector2d.cpp(2): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+c:\users\mxddx\desktop\tpv-practicas\holasdl\vector2d.cpp(29): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código...
+  HolaSDL.vcxproj -> C:\Users\mxddx\Desktop\TPV-practicas\bin\HolaSDLDebug.exe

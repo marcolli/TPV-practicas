@@ -17,16 +17,15 @@ void Ball::update() {
 
 	Vector2D prevpos(pos.getX(), pos.getY());
 
-	//Actualizamos pos
-	pos.setX(pos.getX() + velocidad.getX());
-	pos.setY(pos.getY() + velocidad.getY());
+	pos = pos + velocidad;
+
 	Vector2D coll;
 	if (game->collides(getRect(), getVel(), coll)) {
 		coll.normaliza();
 		velocidad = velocidad + (coll * 2);
 		velocidad.normaliza();
-		pos = prevpos + velocidad;
 	}
+	pos = pos + velocidad;
 }
 
 /*	Devuelve el Velocidad de la ball

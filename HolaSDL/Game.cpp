@@ -29,11 +29,11 @@ Game::Game() {
 	map			= new BlocksMap(MAP_WIDTH, MAP_HEIGHT, 0, 0, textures[BlocksText]);
 
 	objects.push_back(map);
-	objects.push_back(paddle);
-	objects.push_back(ball);
-	objects.push_back(topwall);
-	objects.push_back(rightwall);
-	objects.push_back(leftwall);
+	objects.push_back(paddle); 
+	objects.push_back(ball); 
+	objects.push_back(topwall); 
+	objects.push_back(rightwall); 
+	objects.push_back(leftwall); 
 	
 	map->load("../mapas/level01.ark");
 }

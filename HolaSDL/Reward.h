@@ -1,14 +1,20 @@
 #pragma once
 #include "MovingObject.h"
+#include "Game.h"
 class Reward :
 	public MovingObject
 {
+protected:
+	Game* game;
+	list<ArkanoidObject*>::iterator itList;
+
 public:
 	Reward();
-	Reward(double posx, double posy, double width, double height, Texture* textura);
-	
-	/*virtual void render();
-	virtual void update();*/
+	Reward(double posx, double posy, double width, double height, Texture* textura, Game* g, list<ArkanoidObject*>::iterator it);
+
+	virtual void update();
+
+	virtual void action() {}
 
 	virtual ~Reward();
 };

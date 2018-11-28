@@ -46,6 +46,7 @@ private:
 	Ball* ball = nullptr;
 
 	list<ArkanoidObject*> objects;
+	list<ArkanoidObject*>::iterator it = objects.begin();
 
 	bool exit, gameOver, win = false;//gameOver-> perder vidas, win-> acabar con todos los bloques, exit-> salir por menu de pausa
 	bool paddleCD = false;
