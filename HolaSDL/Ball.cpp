@@ -8,10 +8,6 @@ Ball::Ball(double posx, double posy, double w, double h, Texture* textura, Game*
 	velocidad = Vector2D(1,-1);
 	game = juego;
 }
-//
-//void Ball::render() {
-//	MovingObject::render();
-//}
 
 void Ball::update() {
 
@@ -22,10 +18,10 @@ void Ball::update() {
 	Vector2D coll;
 	if (game->collides(getRect(), getVel(), coll)) {
 		coll.normaliza();
-		velocidad = velocidad + (coll * 2);
+		velocidad = velocidad + coll * (velocidad * coll) * 2;
 		velocidad.normaliza();
 	}
-	pos = pos + velocidad;
+
 }
 
 /*	Devuelve el Velocidad de la ball

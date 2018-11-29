@@ -17,6 +17,16 @@ void  ArkanoidObject::render() {
 	texture->render(getRect());
 }
 
+void ArkanoidObject::loadFromFile(ifstream & file) {
+
+}
+
+void ArkanoidObject::saveToFile(ofstream & file) {
+
+	file << pos.getX() << pos.getY() << width << height;
+
+}
+
 double ArkanoidObject::getX() { return pos.getX(); }
 double ArkanoidObject::getY() { return pos.getY(); }
 double ArkanoidObject::getW() { return width; }

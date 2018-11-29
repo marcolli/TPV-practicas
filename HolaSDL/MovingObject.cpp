@@ -7,6 +7,15 @@ MovingObject::MovingObject(int posx, int posy, double w, double h, Texture* text
 	velocidad = Vector2D(0,0);
 }
 
+void MovingObject::saveToFile(ofstream & file) {
+
+	file << pos.getX() << pos.getY() << width << height << velocidad.getX() << velocidad.getY();
+
+}
+
+void MovingObject::loadFromFile(ifstream & file) {
+
+}
 
 MovingObject::~MovingObject()
 {

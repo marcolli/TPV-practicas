@@ -1,5 +1,6 @@
 #pragma once
 #include "ArkanoidObject.h"
+#include <fstream>
 
 class MovingObject : public ArkanoidObject {
 protected:
@@ -10,7 +11,8 @@ public:
 	MovingObject() {}
 	MovingObject(int posx, int posy, double w, double h, Texture* textura);
 	
-	//virtual void render() { ArkanoidObject::render(); }
+	virtual void saveToFile(ofstream & file);
+	virtual void loadFromFile(ifstream & file);
 
 	virtual ~MovingObject();
 };

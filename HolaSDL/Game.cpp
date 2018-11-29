@@ -20,6 +20,7 @@ Game::Game() {
 
 	numVidas = 3;
 	numNivel = 1;
+	score = 0;
 
 	paddle		= new Paddle((WIN_WIDTH/2) - (PADDLE_WIDTH / 2), ((WIN_HEIGHT*3)/4), PADDLE_WIDTH, 24, textures[PaddleText]);
 	ball		= new Ball((WIN_WIDTH / 2) - (BALL_WIDTH/2), ((WIN_HEIGHT * 3) / 4) -10, BALL_WIDTH, 25, textures[BallText], this);
@@ -98,6 +99,8 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 		if (b = map->collides(ball->getRect(), ball->getVel(), coll)) {//si hay colisión con bloques
 			//cambio la velocidad de ball
 			map->destruyeBloque(b);//destruyo el bloque con el que ha colisionado la pelota
+			score += 10;
+			cout << score << endl;
 			if (map->getNumBloques() == 0)
 				win = true;
 			paddleCD = false;
@@ -156,4 +159,18 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 void Game::recolocaBall() {
 	ball->setX((WIN_WIDTH / 2) - (BALL_WIDTH / 2));
 	ball->setY(((WIN_HEIGHT * 3) / 4) - 10);
+}
+
+void Game::save(string file) {
+	ofstream f;
+	f.open(file);
+
+	f << numVidas << numNivel << score << endl;
+
+	for (auto o : objects) {
+		o->saveToFile(f);
+		f << endl;
+	}
+
+	f.close();
 }
