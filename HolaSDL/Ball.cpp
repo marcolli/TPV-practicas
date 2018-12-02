@@ -17,11 +17,8 @@ void Ball::update() {
 
 	Vector2D coll;
 	if (game->collides(getRect(), getVel(), coll)) {
-		coll.normaliza();
-		velocidad = velocidad + coll * (velocidad * coll) * 2;
-		velocidad.normaliza();
+		velocidad = velocidad + (coll * 2);
 	}
-
 }
 
 /*	Devuelve el Velocidad de la ball

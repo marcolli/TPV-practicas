@@ -91,6 +91,9 @@
     <ClInclude Include="MovingObject.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="Reward.h" />
+    <ClInclude Include="RewardES.h" />
+    <ClInclude Include="RewardL.h" />
+    <ClInclude Include="RewardR.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Wall.h" />

@@ -51,6 +51,7 @@ private:
 	bool exit, gameOver, win = false;//gameOver-> perder vidas, win-> acabar con todos los bloques, exit-> salir por menu de pausa
 	bool paddleCD = false;
 	int numVidas, numNivel, score;
+	string level;
 	Texture* textures[];
 public:
 	Game();
@@ -61,6 +62,19 @@ public:
 	void update();
 	void save(string file);
 	void load(string file);
+
 	bool collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll);
+	bool rewardcollides(const SDL_Rect rect);
+
 	void recolocaBall();
+	void restartGame();
+
+	void pasaNivel();
+	void vidaExtra();
+	void alargaPaddle();
+	void acortaPaddle();
+
+	int getHeight() {
+		return WIN_HEIGHT;
+	}
 };

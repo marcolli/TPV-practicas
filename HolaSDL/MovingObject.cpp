@@ -15,6 +15,11 @@ void MovingObject::saveToFile(ofstream & file) {
 
 void MovingObject::loadFromFile(ifstream & file) {
 
+	double loadx, loady, velox, veloy;
+	file >> loadx >> loady >> width >> height >> velox >> veloy;
+	pos.setX(loadx);	pos.setY(loady);
+	velocidad.setX(velox);	velocidad.setY(veloy);
+
 }
 
 MovingObject::~MovingObject()

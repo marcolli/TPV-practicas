@@ -3,6 +3,7 @@
 #include <iostream>
 #include "checkML.h"
 #include <list>
+#include <sstream>
 
 using namespace std;
 
@@ -21,8 +22,11 @@ Game::Game() {
 	numVidas = 3;
 	numNivel = 1;
 	score = 0;
+	stringstream  nivel;
+	nivel << "../mapas/level0" << numNivel << ".ark";
+	nivel >> level;
 
-	paddle		= new Paddle((WIN_WIDTH/2) - (PADDLE_WIDTH / 2), ((WIN_HEIGHT*3)/4), PADDLE_WIDTH, 24, textures[PaddleText]);
+	paddle		= new Paddle((WIN_WIDTH/2) - (PADDLE_WIDTH / 2), ((WIN_HEIGHT*3)/4), PADDLE_WIDTH, 24, textures[PaddleText], this);
 	ball		= new Ball((WIN_WIDTH / 2) - (BALL_WIDTH/2), ((WIN_HEIGHT * 3) / 4) -10, BALL_WIDTH, 25, textures[BallText], this);
 	topwall		= new Wall(0, 0, WIN_WIDTH, 10, textures[TopText]);
 	rightwall	= new Wall(WIN_WIDTH - 10, 0, 10, 800, textures[SideText]);
@@ -36,7 +40,7 @@ Game::Game() {
 	objects.push_back(rightwall); 
 	objects.push_back(leftwall); 
 	
-	map->load("../mapas/level01.ark");
+	map->load(level);
 }
  
 Game::~Game() {
@@ -48,11 +52,19 @@ Game::~Game() {
 
 void Game::run() {
 	cout << "Tienes 3 vidas" << endl;
-	while (!exit && !win && !gameOver) { // Falta el control de tiempo
-		handleEvents();
-		update();
-		render(); 
-	 	Sleep(FRAME_RATE);
+	while (numNivel < 4) {
+		while (!exit && !win && !gameOver) { // Falta el control de tiempo
+			handleEvents();
+			update();
+			render();
+			Sleep(FRAME_RATE);
+		}
+
+		if (win == true) {
+			numNivel++;
+			score += 1000;
+			restartGame();
+		}
 	}
 }
 
@@ -128,9 +140,10 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 	//casos Paddle
 	else if (rect.x < (paddle->getX() + paddle->getW()) && (rect.x + rect.w) > paddle->getX() && (rect.y + rect.h) > paddle->getY() && rect.y < (paddle->getY() + paddle->getH())) {
 		if (!paddleCD) {
-			if (rect.x + (rect.w/2) < (paddle->getX() + (paddle->getW() / 3))) coll = { -1, -1 };
+			/*if (rect.x + (rect.w/2) < (paddle->getX() + (paddle->getW() / 3))) coll = { -1, -1 };
 			else if (rect.x + (rect.w / 2) < (paddle->getX() + (paddle->getW() * 2 / 3))) coll = {0, -1 };
-			else if (rect.x + (rect.w / 2) > (paddle->getX() + (paddle->getW() * 2 / 3))) coll = { 1, -1 };
+			else if (rect.x + (rect.w / 2) > (paddle->getX() + (paddle->getW() * 2 / 3))) coll = { 1, -1 };*/
+			coll = { 0, -1 };
 			paddleCD = true;
 			return true;
 		}
@@ -159,8 +172,11 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 void Game::recolocaBall() {
 	ball->setX((WIN_WIDTH / 2) - (BALL_WIDTH / 2));
 	ball->setY(((WIN_HEIGHT * 3) / 4) - 10);
+	ball->setVel(1, -1);
 }
 
+
+//Metodos de guardar y cargar
 void Game::save(string file) {
 	ofstream f;
 	f.open(file);
@@ -173,4 +189,57 @@ void Game::save(string file) {
 	}
 
 	f.close();
+}
+
+void Game::load(string file) {
+	ifstream f;
+	f.open(file);
+
+	f >> numVidas >> numNivel >> score;
+
+	for (auto o : objects) {
+		o->loadFromFile(f);
+	}
+
+	f.close();
+
+}
+
+void Game::restartGame() {
+	stringstream  nivel;
+	nivel << "../mapas/level0" << numNivel << ".ark";
+	nivel >> level;
+
+	map->load(level);
+	recolocaBall();
+	win = false;
+
+}
+
+//Metodos de los rewards
+void Game::pasaNivel() {
+	numNivel++; 
+	restartGame();
+}
+
+void Game::vidaExtra() {
+	numVidas++;
+}
+
+void Game::alargaPaddle() {
+	paddle->alarga();
+}
+
+void Game::acortaPaddle() {
+	paddle->acorta();
+}
+
+//El reward colisiona con la paddle
+bool Game::rewardcollides(const SDL_Rect rect) {
+
+	if (rect.x < (paddle->getX() + paddle->getW()) && (rect.x + rect.w) > paddle->getX() && (rect.y + rect.h) > paddle->getY() && rect.y < (paddle->getY() + paddle->getH())) {
+		return true;
+	}
+	return false;
+
 }

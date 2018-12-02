@@ -1,13 +1,15 @@
 #include "Paddle.h"
+#include "Game.h"
 #include <iostream>
 
 using namespace std;
 
 SDL_Event event;
 
-Paddle::Paddle(double posx, double posy, double width, double height, Texture* textura) : 
+Paddle::Paddle(double posx, double posy, double width, double height, Texture* textura, Game* game) : 
 	MovingObject(posx, posy, width, height, textura) {
 	velocidad = Vector2D(0,0);
+	juego = game;
 }
 
 void Paddle::update() {
@@ -43,4 +45,12 @@ void Paddle::handleEvents(SDL_Event event) {
 			break;
 		break;
 	}
+}
+
+void Paddle::acorta() {
+	width -= 50;
+}
+
+void Paddle::alarga() {
+	width += 50;
 }
