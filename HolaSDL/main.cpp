@@ -12,6 +12,7 @@ void run() {
 	{
 		Game game;
 		game.run();
+		game.~Game();
 	}
 	catch (string e)
 	{

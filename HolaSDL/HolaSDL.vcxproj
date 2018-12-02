@@ -77,6 +77,9 @@
     <ClCompile Include="MovingObject.cpp" />
     <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="Reward.cpp" />
+    <ClCompile Include="RewardES.cpp" />
+    <ClCompile Include="RewardL.cpp" />
+    <ClCompile Include="RewardR.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Wall.cpp" />

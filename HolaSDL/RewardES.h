@@ -1,5 +1,7 @@
 #pragma once
 #include "Reward.h"
+#include <list>
+
 
 class RewardE : public Reward {
 
@@ -8,9 +10,7 @@ public:
 	RewardE(double posx, double posy, double width, double height, Texture* textura, Game* g, list<ArkanoidObject*>::iterator it) :
 		Reward(posx, posy, width, height, textura, g, it) {}
 
-	virtual void action() {
-		game->acortaPaddle();
-	}
+	virtual void action();
 
 };
 
@@ -21,8 +21,6 @@ public:
 	RewardS(double posx, double posy, double width, double height, Texture* textura, Game* g, list<ArkanoidObject*>::iterator it) :
 		Reward(posx, posy, width, height, textura, g, it) {}
 
-	virtual void action() {
-		game->alargaPaddle();
-	}
+	virtual void action();
 
 };

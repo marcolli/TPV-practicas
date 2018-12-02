@@ -45,6 +45,9 @@ Game::Game() {
  
 Game::~Game() {
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
+	for (ArkanoidObject* o : objects) {
+		o->~ArkanoidObject();
+	}
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -69,9 +72,12 @@ void Game::run() {
 }
 
 void Game::update() {
-	for (ArkanoidObject* o: objects) {
-		o->update();
-	}	
+	for (auto it = objects.begin(); it != objects.end();) {
+		auto next = it;
+		++next;
+		(*it)->update();
+		it = next;
+	}
 }
 
 void Game::render() const {
@@ -113,6 +119,22 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 			map->destruyeBloque(b);//destruyo el bloque con el que ha colisionado la pelota
 			score += 10;
 			cout << score << endl;
+			int prob1 = getRandom(0, 10);
+			int prob2 = getRandom(0, 10);
+			if (prob1 == 5) {
+				if (prob2 < 2) {
+					objects.push_back(new RewardL(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+				}
+				else if (prob2 >= 2 && prob2 < 4) {
+					objects.push_back(new RewardR(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+				}
+				else if (prob2 >= 4 && prob2 < 7) {
+					objects.push_back(new RewardE(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+				}
+				else if (prob2 >= 7 && prob2 < 10) {
+					objects.push_back(new RewardS(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+				}
+			}
 			if (map->getNumBloques() == 0)
 				win = true;
 			paddleCD = false;
@@ -242,4 +264,10 @@ bool Game::rewardcollides(const SDL_Rect rect) {
 	}
 	return false;
 
+}
+
+void Game::killObject(list<ArkanoidObject*>::iterator it) {
+	if (it == firstReward) firstReward++;
+	delete* it;
+	objects.erase(it);
 }

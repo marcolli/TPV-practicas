@@ -7,6 +7,10 @@
 #include "Texture.h"
 #include "Wall.h"
 #include "Vector2D.h"
+#include "Reward.h"
+#include "RewardES.h"
+#include "RewardL.h"
+#include "RewardR.h"
 #include "checkML.h"
 
 #include <list>
@@ -22,15 +26,15 @@ struct TextureAttributes
 
 const int WIN_WIDTH		= 1020;
 const int WIN_HEIGHT	= 700;
-const int NUM_TEXTURES	= 5;
+const int NUM_TEXTURES	= 6;
 const int FRAME_RATE	= 3;
 const int MAP_WIDTH		= WIN_WIDTH - 20;
 const int MAP_HEIGHT	= (WIN_HEIGHT / 2) - 10;
 const int PADDLE_WIDTH = 120;
 const int BALL_WIDTH = 25;
 
-const TextureAttributes TEXT_ATTRIBS[NUM_TEXTURES] = { {"../images/ball.png",1,1}, {"../images/bricks.png", 2, 3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1} };
-enum TextureName {BallText, BlocksText, PaddleText, SideText, TopText};
+const TextureAttributes TEXT_ATTRIBS[NUM_TEXTURES] = { {"../images/ball.png",1,1}, {"../images/bricks.png", 2, 3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1}, {"../images/rewards.png",9,8} };
+enum TextureName {BallText, BlocksText, PaddleText, SideText, TopText, RewardText};
 
 
 class Game {
@@ -46,13 +50,14 @@ private:
 	Ball* ball = nullptr;
 
 	list<ArkanoidObject*> objects;
-	list<ArkanoidObject*>::iterator it = objects.begin();
+	list<ArkanoidObject*>::iterator firstReward;
 
 	bool exit, gameOver, win = false;//gameOver-> perder vidas, win-> acabar con todos los bloques, exit-> salir por menu de pausa
 	bool paddleCD = false;
 	int numVidas, numNivel, score;
 	string level;
 	Texture* textures[];
+
 public:
 	Game();
 	~Game();
@@ -74,7 +79,13 @@ public:
 	void alargaPaddle();
 	void acortaPaddle();
 
+	void killObject(list<ArkanoidObject*>::iterator it);
+
 	int getHeight() {
 		return WIN_HEIGHT;
+	}
+
+	int getRandom(int ini, int cantidad) {
+		return rand() % cantidad + ini;
 	}
 };
