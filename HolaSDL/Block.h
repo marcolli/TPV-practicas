@@ -20,7 +20,10 @@ public:
 
 	virtual void render();
 
+	void load(int posx, int posy, int w, int h, int colour);
+
 	int getFila() const { return fil; };
 	int getCol() const { return col; };
+	int getColor() const { return color; };
 
 };

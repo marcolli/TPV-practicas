@@ -27,15 +27,9 @@ void ArkanoidObject::loadFromFile(ifstream & file) {
 
 void ArkanoidObject::saveToFile(ofstream & file) {
 
-	file << pos.getX() << pos.getY() << width << height;
+	file << pos.getX() << " " << pos.getY() << " " << width << " " << height;
 
 }
-
-//void ArkanoidObject::loadFromFile(ifstream & file) {
-//
-//	
-//
-//}
 
 double ArkanoidObject::getX() { return pos.getX(); }
 double ArkanoidObject::getY() { return pos.getY(); }

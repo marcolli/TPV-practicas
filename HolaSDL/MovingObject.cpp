@@ -9,7 +9,7 @@ MovingObject::MovingObject(int posx, int posy, double w, double h, Texture* text
 
 void MovingObject::saveToFile(ofstream & file) {
 
-	file << pos.getX() << pos.getY() << width << height << velocidad.getX() << velocidad.getY();
+	file << pos.getX() << " " << pos.getY() << " " << width << " " << height << " " << velocidad.getX() << " " << velocidad.getY();
 
 }
 

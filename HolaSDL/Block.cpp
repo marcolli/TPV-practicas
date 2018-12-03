@@ -14,3 +14,9 @@ void Block::render() {
 	SDL_Rect rect = getRect();
 	texture->renderFrame(rect, (color-1)/texture->getNumCols(), (color-1)%texture->getNumCols(), 0);
 }
+
+void Block::load(int posx, int posy, int w, int h, int colour) {
+	pos.setX(posx);	pos.setY(posy);
+	width = w;	height = h;
+	color = colour;
+}

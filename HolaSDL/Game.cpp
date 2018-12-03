@@ -203,7 +203,7 @@ void Game::save(string file) {
 	ofstream f;
 	f.open(file);
 
-	f << numVidas << numNivel << score << endl;
+	f << numVidas << " " << numNivel << " " << score << endl;
 
 	for (auto o : objects) {
 		o->saveToFile(f);

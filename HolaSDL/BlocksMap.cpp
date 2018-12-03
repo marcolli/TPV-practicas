@@ -158,6 +158,36 @@ void BlocksMap::destruyeBloque(Block* bloque) {
 	numBloques--;
 }
 
+void BlocksMap::saveToFile(ofstream & file) {
+
+	for (int i = 0; i < fils; i++) {
+		for (int j = 0; j < cols; j++) {
+			if (mapa[i][j] == nullptr) file << "0 ";
+			else file << mapa[i][j]->getColor() << " ";
+		}
+		file << endl;
+	}
+
+}
+
+void BlocksMap::loadFromFile(ifstream & file) {
+
+	for (int i = 0; i < fils; i++) {
+		for (int j = 0; j < cols; j++) {
+			int color;
+			file >> color;
+			if (color != 0) {
+				if (mapa[i][j] == nullptr) {
+					mapa[i][j] = new Block((j*wcelda) + 10, (i*hcelda) + 10, wcelda, hcelda, i, j, color, texture);
+					numBloques++;
+				}
+			}
+			else mapa[i][j] = nullptr;
+		}
+	}
+
+}
+
 BlocksMap::~BlocksMap() {
 	for (int i = 0; i < fils; i++) {
 		for (int j = 0; j < cols; j++)

@@ -34,6 +34,12 @@ void Paddle::handleEvents(SDL_Event event) {
 		case SDLK_RIGHT:
 			velocidad.setX(3);
 			break;
+		case SDLK_s:
+			juego->save("archivo.txt");
+			break;
+		case SDLK_c:
+			juego->load("archivo.txt");
+			break;
 		default:
 			break;
 		}

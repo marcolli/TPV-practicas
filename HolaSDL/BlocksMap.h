@@ -36,4 +36,7 @@ public:
 	Block* blockAt(const Vector2D& p);
 	void destruyeBloque(Block* bloque);
 
+	virtual void loadFromFile(ifstream & file);
+	virtual void saveToFile(ofstream & file);
+
 };
