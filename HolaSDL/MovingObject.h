@@ -10,6 +10,8 @@ public:
 
 	MovingObject() {}
 	MovingObject(int posx, int posy, double w, double h, Texture* textura);
+
+	virtual void update();
 	
 	virtual void saveToFile(ofstream & file);
 	virtual void loadFromFile(ifstream & file);

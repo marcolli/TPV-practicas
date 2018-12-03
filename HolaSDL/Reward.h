@@ -1,6 +1,7 @@
 #pragma once
 #include "MovingObject.h"
 #include <list>
+
 class Game;
 class Reward :
 	public MovingObject

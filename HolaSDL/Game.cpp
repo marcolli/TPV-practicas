@@ -40,6 +40,8 @@ Game::Game() {
 	objects.push_back(rightwall); 
 	objects.push_back(leftwall); 
 	
+	firstReward = objects.end();
+
 	map->load(level);
 }
  
@@ -82,8 +84,11 @@ void Game::update() {
 
 void Game::render() const {
 	SDL_RenderClear(renderer);
-	for (ArkanoidObject* o : objects) {
-		o->render();
+	for (auto it = objects.begin(); it != objects.end();) {
+		auto next = it;
+		++next;
+		(*it)->render();
+		it = next;
 	}
 	SDL_RenderPresent(renderer);
 }
@@ -267,7 +272,8 @@ bool Game::rewardcollides(const SDL_Rect rect) {
 }
 
 void Game::killObject(list<ArkanoidObject*>::iterator it) {
-	if (it == firstReward) firstReward++;
+	if (it != firstReward) 
+		firstReward++;
 	delete* it;
 	objects.erase(it);
 }

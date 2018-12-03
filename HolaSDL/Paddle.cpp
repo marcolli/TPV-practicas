@@ -14,8 +14,7 @@ Paddle::Paddle(double posx, double posy, double width, double height, Texture* t
 
 void Paddle::update() {
 
-	pos.setX(pos.getX() + velocidad.getX());
-
+	MovingObject::update();
 }
 
 /*	Mueve la paddle con los cursores izq y derecho y se detiene al soltar las teclas

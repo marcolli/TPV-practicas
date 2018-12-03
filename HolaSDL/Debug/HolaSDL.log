@@ -1,10 +1,4 @@
-﻿  BlocksMap.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
+﻿  Game.cpp
 c:\users\mxddx\desktop\tpv-practicas\holasdl\game.h(59): warning C4200: se ha utilizado una extensión no estándar: matriz de tamaño cero en struct/union
   c:\users\mxddx\desktop\tpv-practicas\holasdl\game.h(59): note: Un constructor con valor predeterminado o un operador de asignación de copia o movimiento ignorará a este miembro.
-c:\users\mxddx\desktop\tpv-practicas\holasdl\blocksmap.cpp(139): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\mxddx\desktop\tpv-practicas\holasdl\blocksmap.cpp(140): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\mxddx\desktop\tpv-practicas\holasdl\blocksmap.cpp(144): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\mxddx\desktop\tpv-practicas\holasdl\blocksmap.cpp(145): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   HolaSDL.vcxproj -> C:\Users\mxddx\Desktop\TPV-practicas\bin\HolaSDLDebug.exe

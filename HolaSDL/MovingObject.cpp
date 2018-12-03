@@ -22,6 +22,10 @@ void MovingObject::loadFromFile(ifstream & file) {
 
 }
 
+void MovingObject::update() {
+	pos = pos + velocidad;
+}
+
 MovingObject::~MovingObject()
 {
 }
