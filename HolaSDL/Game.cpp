@@ -38,9 +38,9 @@ Game::Game() {
 	objects.push_back(ball); 
 	objects.push_back(topwall); 
 	objects.push_back(rightwall); 
-	objects.push_back(leftwall); 
-	
-	firstReward = objects.end();
+	objects.push_back(leftwall);
+
+	firstReward = objects.begin();
 
 	map->load(level);
 }
@@ -128,16 +128,32 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 			int prob2 = getRandom(0, 10);
 			if (prob1 == 5) {
 				if (prob2 < 2) {
-					objects.push_back(new RewardL(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+					if (numRewards == 0) {
+						advance(firstReward, 5);
+						objects.push_back(new RewardL(b->getX(), b->getY(), 40, 20, textures[RewardText], this, firstReward++));
+						numRewards++;
+					}
 				}
 				else if (prob2 >= 2 && prob2 < 4) {
-					objects.push_back(new RewardR(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+					if (numRewards == 0) {
+						advance(firstReward, 5);
+						objects.push_back(new RewardR(b->getX(), b->getY(), 40, 20, textures[RewardText], this, firstReward++));
+						numRewards++;
+					}
 				}
 				else if (prob2 >= 4 && prob2 < 7) {
-					objects.push_back(new RewardE(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+					if (numRewards == 0) {
+						advance(firstReward, 5);
+						objects.push_back(new RewardE(b->getX(), b->getY(), 40, 20, textures[RewardText], this, firstReward++));
+						numRewards++;
+					}
 				}
 				else if (prob2 >= 7 && prob2 < 10) {
-					objects.push_back(new RewardS(b->getX(), b->getY(), 40, 20, textures[BallText], this, firstReward));
+						if (numRewards == 0) {
+							advance(firstReward, 5);
+							objects.push_back(new RewardS(b->getX(), b->getY(), 40, 20, textures[RewardText], this, firstReward++));
+							numRewards++;
+						}
 				}
 			}
 			if (map->getNumBloques() == 0)
@@ -167,10 +183,9 @@ bool Game::collides(const SDL_Rect rect, const Vector2D& vel, Vector2D& coll) {
 	//casos Paddle
 	else if (rect.x < (paddle->getX() + paddle->getW()) && (rect.x + rect.w) > paddle->getX() && (rect.y + rect.h) > paddle->getY() && rect.y < (paddle->getY() + paddle->getH())) {
 		if (!paddleCD) {
-			/*if (rect.x + (rect.w/2) < (paddle->getX() + (paddle->getW() / 3))) coll = { -1, -1 };
+			if (rect.x + (rect.w/2) < (paddle->getX() + (paddle->getW() / 3))) coll = { -1, -1 };
 			else if (rect.x + (rect.w / 2) < (paddle->getX() + (paddle->getW() * 2 / 3))) coll = {0, -1 };
-			else if (rect.x + (rect.w / 2) > (paddle->getX() + (paddle->getW() * 2 / 3))) coll = { 1, -1 };*/
-			coll = { 0, -1 };
+			else if (rect.x + (rect.w / 2) > (paddle->getX() + (paddle->getW() * 2 / 3))) coll = { 1, -1 };
 			paddleCD = true;
 			return true;
 		}

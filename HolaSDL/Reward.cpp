@@ -25,8 +25,13 @@ void Reward::update() {
 
 void Reward::render() {
 	SDL_Rect rect = getRect();
-	texture->renderFrame(rect, 10, 8, 0);
-	MovingObject::render();
+	texture->renderFrame(rect, 3, 2, 0);
+}
+
+void Reward::setIt(list<ArkanoidObject*>::iterator it) {
+
+	itList = it;
+
 }
 
 Reward::~Reward()

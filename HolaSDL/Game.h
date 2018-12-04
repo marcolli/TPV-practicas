@@ -33,7 +33,8 @@ const int MAP_HEIGHT	= (WIN_HEIGHT / 2) - 10;
 const int PADDLE_WIDTH = 120;
 const int BALL_WIDTH = 25;
 
-const TextureAttributes TEXT_ATTRIBS[NUM_TEXTURES] = { {"../images/ball.png",1,1}, {"../images/bricks.png", 2, 3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1}, {"../images/rewards.png",10,8} };
+const TextureAttributes TEXT_ATTRIBS[NUM_TEXTURES] = 
+{ {"../images/ball.png",1,1}, {"../images/bricks.png", 2, 3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1}, {"../images/rewards.png",10,8} };
 enum TextureName {BallText, BlocksText, PaddleText, SideText, TopText, RewardText};
 
 
@@ -55,6 +56,7 @@ private:
 	bool exit, gameOver, win = false;//gameOver-> perder vidas, win-> acabar con todos los bloques, exit-> salir por menu de pausa
 	bool paddleCD = false;
 	int numVidas, numNivel, score;
+	int numRewards = 0;
 	string level;
 	Texture* textures[];
 

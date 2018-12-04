@@ -19,6 +19,8 @@ public:
 
 	virtual void action() {}
 
+	virtual void setIt(list<ArkanoidObject*>::iterator it);
+
 	virtual ~Reward();
 };
 
